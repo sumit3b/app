@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8" />
+        <title>Inbox</title>
+        <script>document.write('<base href="' + document.location + '" />');</script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,100italic,400italic|Roboto+Condensed&amp;lang=en' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/style.css" />
+        <!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
+        <link rel="stylesheet" href="http://rawgit.com/angular/bower-material/master/angular-material.css">
+        <!-- Angular Material Dependencies -->
+        <script src="http://cdn.jsdelivr.net/hammerjs/2.0.4/hammer.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.js"></script>
+        <script src="https://code.angularjs.org/1.2.3/angular-route.min.js"></script>
+        
+        <script src="http://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+        <script src="assets/angular/apps/app.js"></script>
+        <script src="assets/angular/controller/controller.js"></script>
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <div layout="row" layout-fill>
+            <div flex>
+                <header class="main-header">
+                    <a class="title-btn" href="#/intro"><h1>ReadersDoor</h1></a>
+                    <div class="h-btn-right">
+                        <md-button md-no-ink class="md-primary">Sign in</md-button>
+                        <md-button class="md-raised md-primary">Signup</md-button>
+                    </div>
+                </header>
+
+                <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+                    <md-tabs class="md-accent" md-selected="data.selectedIndex">
+                        <md-tab id="tab1" aria-controls="tab1-content">
+                            <a ng-href="#/inbox">{{data.tabLabel}}</a>
+                        </md-tab>
+                        <md-tab id="tab2" aria-controls="tab2-content">
+                             <a ng-href="#/bundles">{{data.tabLabe2}}</a>
+                        </md-tab>
+                        <md-tab id="tab3" aria-controls="tab3-content">
+                            <a ng-href="#/highlights">{{data.tabLabe3}}</a>
+                        </md-tab>
+                        <md-tab id="tab4" aria-controls="tab3-content">
+                            <a ng-href="#/reminders">{{data.tabLabe4}}</a>
+                        </md-tab>
+                        <md-tab id="tab5" aria-controls="tab3-content">
+                            <a ng-href="#/snooze">{{data.tabLabe5}}</a>
+                        </md-tab>
+                        <md-tab id="tab6" aria-controls="tab3-content">
+                            <a ng-href="#/request">{{data.tabLabe6}}</a>
+                        </md-tab>
+                        
+                    </md-tabs>
+                </md-whiteframe>
+                <div ng-view ng-fadein></div>
+            </div>
+        </div>
+    </body>
+</html>
